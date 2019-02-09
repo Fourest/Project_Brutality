@@ -479,6 +479,10 @@ OptionMenu "WeaponSettings"
 	
 	Option "Old Dual SSG Firing System",				"pb_olddualssgfiresystem", "OnOff"
 	StaticText "Fire 2 Shells on The Right SSG Instead of one"
+	StaticText " "
+	
+	Option "Shotgun Tube + Magazine",				"pb_SGDualTubeSystem", "YesOrNo"
+	StaticText "Reload 9 Shells and then insert the magazine"
 	StaticText " "	
 }
 ///////////////////////////////////////////////////////////////////////////////////////

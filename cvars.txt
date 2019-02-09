@@ -1486,6 +1486,30 @@ Script "ToggleSuperGLUpgraded" (VOID) NET
 	}
 }
 
+/* This is so the shotgun can have a unique dual tubing system that is 
+   8 in the tube, 1 in the chamber, and 10 in the mag */
+Script "PumpShotgunMagDualTube" (void) // For weapon respect
+{
+ if	(GetCvar("pb_SGDualTubeSystem") >= 1)
+  {
+   SetAmmoCapacity("ShotgunAmmo", 19);
+  }
+ else 
+  {
+   SetAmmoCapacity("ShotgunAmmo", 11);
+  }
+}
+
+Script "PumpShotgunMagDualTube11" (void) 
+{
+   SetAmmoCapacity("ShotgunAmmo", 11);
+}
+
+Script "PumpShotgunMagDualTube19" (void)
+{
+   SetAmmoCapacity("ShotgunAmmo", 19);
+}
+
 Script "AutoShotgunDrumMag" (void)
 {
 	SetAmmoCapacity("AutoshotgunAmmo", 20);
@@ -1496,10 +1520,6 @@ Script "AutoShotgunDrumMag" (void)
 Script "PumpShotgunMag" (void)
 {
 	SetAmmoCapacity("ShotgunAmmo", 11);
-	if (CheckInventory("ShotgunSelected") == TRUE)
-	{
-	SetWeapon("Shot_Mag");
-	}
 }
 
 //Starter Pack Cyberdemon fix
@@ -1746,7 +1766,7 @@ Script "ShutUpDammit" (VOID) net
 }
 
 //Key cards, Taggert. What do they mean?
-
+//Where's that freakin red keycard!?
 script "GiveAllPlayersRedCard" (void) NET
 {
     for (int p = 0; p < 8; p++)
